@@ -71,9 +71,11 @@ def show_controls(event=None):
 
 # Function to hide close and minimize buttons when not hovering
 def hide_controls(event=None):
-    if root.winfo_pointerx() < root.winfo_rootx() or root.winfo_pointerx() > root.winfo_rootx() + root.winfo_width():
-        close_button.place_forget()
-        minimize_button.place_forget()
+    # Check if the mouse is still within the window boundaries or the buttons themselves
+    if (event.widget == root) or (event.widget == close_button) or (event.widget == minimize_button):
+        return
+    close_button.place_forget()
+    minimize_button.place_forget()
 
 # Function to enable dragging the window
 def start_drag(event):
@@ -95,9 +97,9 @@ if __name__ == "__main__":
     root = tk.Tk()
     root.title("20-Minute Timer")
 
-    # Make window black, semi-transparent, and always on top
+    # Make window black, more transparent, and always on top
     root.configure(bg='black')
-    root.attributes('-alpha', 0.7)  # Set transparency (0.0 to 1.0)
+    root.attributes('-alpha', 0.5)  # Set transparency (0.0 to 1.0), adjusted to 0.5 for increased transparency
     root.attributes('-topmost', True)  # Keep window on top
     root.overrideredirect(True)  # Remove window borders
 
