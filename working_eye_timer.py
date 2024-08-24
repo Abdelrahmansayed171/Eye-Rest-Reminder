@@ -9,6 +9,8 @@ def stop_alarm():
     global alarm_triggered
     alarm_triggered = False
     alarm_window.destroy()
+    time.sleep(5*60)
+
 
 # Function to play the alarm sound
 def play_alarm():
