@@ -28,7 +28,7 @@
 
 ## How to Use
 
-1. **Download `.exe` file in `dist` directory**
+1. **Double-Click `.exe` file in `dist` directory**
 
 2. **Interaction**:
    - The timer will start automatically upon launching the application.
