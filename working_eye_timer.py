@@ -103,14 +103,14 @@ if __name__ == "__main__":
     root.attributes('-topmost', True)  # Keep window on top
     root.overrideredirect(True)  # Remove window borders
 
-    # Set initial geometry and size
-    width = 300  # Width of the window
-    height = 150  # Height of the window
+    # Set initial geometry and size to fit the timer value
+    width = 250  # Width of the window
+    height = 100  # Height of the window
     root.geometry(f"{width}x{height}")
 
     # Add a label to display the timer
     timer_label = tk.Label(root, text="20:00", font=("Arial", 48), fg="white", bg="black")
-    timer_label.pack(pady=20)
+    timer_label.pack(pady=10)
 
     # Create close and minimize buttons
     close_button = tk.Button(root, text="✖", command=on_closing, font=("Arial", 12), bg="black", fg="white", bd=0)
